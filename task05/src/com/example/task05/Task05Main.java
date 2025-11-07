@@ -7,9 +7,12 @@ import java.io.IOException;
 public class Task05Main {
     public static void main(String[] args) throws IOException {
         String pathToFile = args[0]; // "/home/user/file.txt"
-
-        String s = readFile(pathToFile);
-        System.out.println(s);
+        try {
+            String s = readFile(pathToFile);
+            System.out.println(s);
+        } catch (IOException e) {
+            System.out.printf("файл %d не найден", pathToFile);
+        }
     }
 
     public static String readFile(String pathToFile) throws IOException {
