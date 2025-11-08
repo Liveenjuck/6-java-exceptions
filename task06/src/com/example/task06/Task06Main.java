@@ -1,5 +1,6 @@
 package com.example.task06;
 
+
 public class Task06Main {
     public static void main(String[] args) {
         //здесь вы можете вручную протестировать ваше решение, вызывая реализуемый метод и смотря результат
@@ -10,7 +11,9 @@ public class Task06Main {
     }
 
     void printMethodName() {
-        //todo напишите здесь свою корректную реализацию этого метода, вместо существующей
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+        String methodName = stackTrace[2].getMethodName();
+        System.out.print(methodName);
     }
 
 }
